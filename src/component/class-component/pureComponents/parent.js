@@ -33,4 +33,4 @@ class ParentComponent extends Component{
     }
 }
 
-export default ParentComponent
+export default ParentComponent;
