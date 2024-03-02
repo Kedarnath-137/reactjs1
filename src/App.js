@@ -10,6 +10,8 @@ import Products from "./component/class-component/products/products";
 import ParentComponent from "./component/class-component/pureComponents/parent";
 import YoutudeButton from "./component/class-component/youtudeButton/youtudeButton";
 import ProductsApi from "./component/functional-component/axios/products";
+import Controlled from "./component/functional-component/forms/controlled";
+import Uncontrolled from "./component/functional-component/forms/uncontrolled";
 import UseStateExample from "./component/functional-component/hooks/useState/useState-ex1";
 import UseStateExample2 from "./component/functional-component/hooks/useState/useState-ex2";
 import UseStateExample3 from "./component/functional-component/hooks/useState/useState-ex3";
@@ -21,10 +23,10 @@ function App() {
   return (
     <div>
       <h1>hello</h1>
-      {/* <UseStateExample/> */}
-    {/* <UseStateExample2/> */}
-    {/* <UseStateExample3/> */}
-    <Employee/>
+      
+   {/* <Uncontrolled/> */}
+   <Controlled/>
+    
     
     </div>
   );
