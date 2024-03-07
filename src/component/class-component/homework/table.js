@@ -1,71 +1,78 @@
-import axios from "axios";
-import { Component } from "react";
+import { Component } from "react"
+import axios from "axios"
 
 
 
-class DataInTable extends Component{
 
-    constructor()
-    {
-        super();
-        this.state = {
-            Items : []
+class DataTable extends Component{
+    constructor(){
+        super()
+        this.state={
+            item:[]
         }
     }
+    
 
-    fetchData=()=>{
-
-        axios.get("https://fakestoreapi.com/products")
-        .then((res)=>{
-            this.setState({Items:res.data});
-        })
-        .catch((error)=>console.log(error))
+      fetchData = ()=>{
+        axios.get('https://fakestoreapi.com/products')
+        .then((res)=>this.setState({
+            item:res.data}))
+        .catch((err)=>console.error(err))
     }
 
-
-    render()
-    {
+    render(){
+        
         return(
             <>
-            <button onClick={this.fetchData}>Fetch Data</button>
+            <h2>table Component</h2>
+            <button onClick={this.fetchData}>get table</button>
             <table style={tableStyle}>
-                <tr>
-                    <th style={headerStyle}>ID</th>
-                    <th style={headerStyle}>Title</th>
-                    <th style={headerStyle}>Image</th>
-                    <th style={headerStyle}>Price</th>
-                    <th style={headerStyle}>Count</th>
-                </tr>
+            <tr>
+                <th style={table1}>id</th>
+                <th style={table1}>title</th>
+                <th style={table1}>description</th>
+                <th style={table1}>price</th>
+                <th style={table1}>image</th>
+                <th style={table1}>rate</th>
+            </tr>
+            {
+                this.state.item.map((eachObject) =>{
+                    return(
+                        
+                        <tr keys={eachObject.id} >
+                            <td style={table1}>{eachObject.id}</td>
+                            <td style={table1}>{eachObject.title}</td>
+                            <td style={table1}>{eachObject.category}</td>
+                            <td style={table1}>{eachObject.price}</td>
+                            <td style={table1}><img src={eachObject.image} width={50}/></td>
+                            <td style={table1}>{eachObject.rating.rate}</td>
+                        </tr>
+                        
+                    )
+                })
 
-                {
-                    this.state.Items.map((eachObject)=>{
-                        return(
-                            <tr key={eachObject.id}>
-                                <td style={headerStyle}>{eachObject.id}</td>
-                                <td style={headerStyle}>{eachObject.title}</td>
-                                <td style={headerStyle}><img src={eachObject.image} width={50}></img></td>
-                                <td style={headerStyle}>{eachObject.price}</td>
-                                <td style={headerStyle}>{eachObject.rating.count}</td>
-                            </tr>
-                        )
-                    })
-                }
+            }
+
             </table>
             </>
+
         )
     }
 }
 
-export default DataInTable;
+const table1={
+    border :'2px solid black',
+    borderCollapse:'collapse',
+    padding:'10px',
+    textAlign:'center',
+    // margin:'auto ',
 
-
-const headerStyle={
-    border:"2px solid black",
-    borderCollapse: "collapse",
-    padding: "10px",
-    textAlign : "center"
 }
+export default DataTable
 
-const tableStyle = {
+
+
+const tableStyle ={
     margin: 'auto',
-}
+    
+    }
