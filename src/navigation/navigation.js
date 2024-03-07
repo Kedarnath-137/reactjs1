@@ -6,15 +6,26 @@ import ProfileScreen from "./postpages/profile-screen";
 import InvalidScreen from "./postpages/invalid-screen";
 import PostRoute from "./postpages/post-routes";
 import PreRoute from "./prepages/pre-routes";
+import { createContext, useState } from "react";
 
 
 
-
+export const UserDetails = createContext()
 
 const NavigationStack = () =>{
+    const [username,setUserName] = useState("surya")
+
+    const changeName = ()=>{
+        setUserName("Sai Kumar")
+    }
     return(
         
         <BrowserRouter>
+
+        <UserDetails.Provider value={{
+            username,
+            changeName,
+        }} >
             {
                 true
                 ?
@@ -22,6 +33,8 @@ const NavigationStack = () =>{
                 :
                 <PreRoute/>
             }
+        </UserDetails.Provider>
+
         </BrowserRouter>
         
         

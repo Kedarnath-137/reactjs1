@@ -37,9 +37,8 @@ import NavigationStack from './navigation/navigation';
 function App() {
   return (
     <div>
-     {/* <NavigationStack/> */}
+     <NavigationStack/>
 
-     <Empolyee/>
    
   
 
