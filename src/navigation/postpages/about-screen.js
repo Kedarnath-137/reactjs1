@@ -8,7 +8,7 @@ import { UserDetails } from "../navigation"
 
 const AboutScreen = ()=>{
     let globalInfo =useContext(UserDetails);
-    console.log(globalInfo);
+    // console.log(globalInfo);
     let changedName = () =>{
         globalInfo.changeName()
     }
