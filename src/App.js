@@ -1,3 +1,4 @@
+import { Card } from 'react-bootstrap';
 import CircleTask from './component/class-component/homework/circleTask';
 import Empolyee from './component/class-component/homework/employee';
 import Employee from './component/class-component/homework/employee';
@@ -32,15 +33,19 @@ import UseStateExample2 from './component/functional-component/hooks/useState/us
 import UseStateExample3 from './component/functional-component/hooks/useState/useState-ex3';
 import Parentpp from './component/functional-component/props/parentpp';
 import NavigationStack from './navigation/navigation';
+import Food from './practice/intro/food';
+import Footer from './practice/intro/footer';
 
+import Header from './practice/intro/header';
 
+import Card12 from './practice/card';
+import Button from './practice/buttonStyle';
 function App() {
   return (
     <div>
      <NavigationStack/>
 
    
-  
 
 
 

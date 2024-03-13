@@ -3,6 +3,7 @@ import Header from "../../component/functional-component/bootstarp/header"
 import { UserDetails } from "../navigation"
 import ParentMemo from "../../component/functional-component/memo/parent"
 import ProfileExample from "../../component/functional-component/hooks/useCallback/useCallback-ex1"
+import UseEffect5 from "../../component/functional-component/hooks/useEffect/useEffect-ex5"
 
 
 
@@ -19,7 +20,9 @@ const SettingScreen = ()=>{
         {/* <h2>{userInfo.username}</h2> */}
         {/* <ParentMemo/> */}
 
-        <ProfileExample/>
+        {/* <ProfileExample/> */}
+
+        <UseEffect5/>
         
         </>
     )
